@@ -10,6 +10,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.Period;
 import java.time.format.DateTimeFormatter;
+import java.util.UUID;
 
 @Data
 @Entity
@@ -17,8 +18,8 @@ import java.time.format.DateTimeFormatter;
 @Validated
 public class Donor {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private UUID id;
 
     @NotBlank(message = "Nome é obrigatório")
     @JsonProperty("nome")
